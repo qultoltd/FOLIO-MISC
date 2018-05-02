@@ -1,0 +1,433 @@
+[{
+      "startDate": "2018-03-26",
+      "endDate": "2018-06-01",
+      "description": "Test description",
+      "descriptionType": "OPENING_DAY",
+      "openingDays": [{
+         "day": "MONDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "13:18:42.000Z",
+            "startTime": "13:00:42.000Z"
+         }, {
+            "endTime": "16:02:18.000Z",
+            "startTime": "14:07:57.000Z"
+         }]
+      }, {
+         "day": "TUESDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "22:06:51.000Z",
+            "startTime": "20:06:51.000Z"
+         }, {
+            "endTime": "19:15:07.000Z",
+            "startTime": "18:11:49.000Z"
+         }]
+      }, {
+         "day": "WEDNESDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "THURSDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "16:30:31.000Z",
+            "startTime": "15:30:31.000Z"
+         }, {
+            "endTime": "15:29:33.000Z",
+            "startTime": "12:12:37.000Z"
+         }, {
+            "endTime": "22:32:55.000Z",
+            "startTime": "18:54:13.000Z"
+         }]
+      }, {
+         "day": "FRIDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "SATURDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "SUNDAY",
+         "open": true,
+         "allDay": true,
+         "openingHour": null
+      }]
+   },
+   {
+      "startDate": "2018-03-28",
+      "endDate": "2018-06-15",
+      "description": "Test description",
+      "descriptionType": "EXCEPTION",
+      "openingDays": [{
+         "day": "MONDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "TUESDAY",
+         "open": true,
+         "allDay": true,
+         "openingHour": null
+      }, {
+         "day": "WEDNESDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "19:45:18.000Z",
+            "startTime": "19:16:18.000Z"
+         }, {
+            "endTime": "19:14:25.000Z",
+            "startTime": "19:00:25.000Z"
+         }, {
+            "endTime": "10:02:31.000Z",
+            "startTime": "9:02:31.000Z"
+         }]
+      }, {
+         "day": "THURSDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "FRIDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "16:19:20.000Z",
+            "startTime": "12:00:20.000Z"
+         }]
+      }, {
+         "day": "SATURDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "SUNDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }]
+   },
+   {
+      "startDate": "2018-01-08",
+      "endDate": "2018-06-06",
+      "description": "Openings",
+      "descriptionType": "OPENING_DAY",
+      "openingDays": [{
+         "day": "MONDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "TUESDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "20:37:31.000Z",
+            "startTime": "20:01:23.000Z"
+         }, {
+            "endTime": "18:37:45.000Z",
+            "startTime": "08:37:45.000Z"
+         }, {
+            "endTime": "22:53:16.000Z",
+            "startTime": "20:50:16.000Z"
+         }]
+      }, {
+         "day": "WEDNESDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "21:52:29.000Z",
+            "startTime": "18:52:29.000Z"
+         }, {
+            "endTime": "15:45:16.000Z",
+            "startTime": "14:45:16.000Z"
+         }, {
+            "endTime": "17:28:34.000Z",
+            "startTime": "16:28:34.000Z"
+         }]
+      }, {
+         "day": "THURSDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "17:59:56.000Z",
+            "startTime": "08:52:41.000Z"
+         }]
+      }, {
+         "day": "FRIDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "14:39:09.000Z",
+            "startTime": "14:39:09.000Z"
+         }, {
+            "endTime": "13:45:07.000Z",
+            "startTime": "08:45:07.000Z"
+         }]
+      }, {
+         "day": "SATURDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "SUNDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }]
+   },
+   {
+      "startDate": "2017-03-18",
+      "endDate": "2018-06-04",
+      "description": "Openings",
+      "descriptionType": "EXCEPTION",
+      "openingDays": [{
+         "day": "MONDAY",
+         "open": true,
+         "allDay": true,
+         "openingHour": null
+      }, {
+         "day": "TUESDAY",
+         "open": true,
+         "allDay": true,
+         "openingHour": null
+      }, {
+         "day": "WEDNESDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "22:02:36.000Z",
+            "startTime": "20:53:19.000Z"
+         }, {
+            "endTime": "16:54:49.000Z",
+            "startTime": "16:54:49.000Z"
+         }]
+      }, {
+         "day": "THURSDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "FRIDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "SATURDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "18:02:53.000Z",
+            "startTime": "08:02:53.000Z"
+         }]
+      }, {
+         "day": "SUNDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }]
+   },
+   {
+      "startDate": "2017-06-30",
+      "endDate": "2018-06-30",
+      "description": "Help desk opening hours",
+      "descriptionType": "OPENING_DAY",
+      "openingDays": [{
+         "day": "MONDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "TUESDAY",
+         "open": true,
+         "allDay": true,
+         "openingHour": null
+      }, {
+         "day": "WEDNESDAY",
+         "open": true,
+         "allDay": true,
+         "openingHour": null
+      }, {
+         "day": "THURSDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "FRIDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "SATURDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "SUNDAY",
+         "open": true,
+         "allDay": true,
+         "openingHour": null
+      }]
+   },
+   {
+      "startDate": "2017-08-16",
+      "endDate": "2018-06-21",
+      "description": "Help desk opening hours",
+      "descriptionType": "EXCEPTION",
+      "openingDays": [{
+         "day": "MONDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "TUESDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "WEDNESDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "THURSDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "FRIDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "21:40:00.000Z",
+            "startTime": "20:18:39.000Z"
+         }, {
+            "endTime": "11:46:11.000Z",
+            "startTime": "10:46:11.000Z"
+         }, {
+            "endTime": "13:40:52.000Z",
+            "startTime": "13:40:52.000Z"
+         }]
+      }, {
+         "day": "SATURDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "16:25:44.000Z",
+            "startTime": "15:25:44.000Z"
+         }, {
+            "endTime": "11:25:50.000Z",
+            "startTime": "10:16:44.000Z"
+         }, {
+            "endTime": "21:43:05.000Z",
+            "startTime": "18:43:05.000Z"
+         }]
+      }, {
+         "day": "SUNDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }]
+   },
+   {
+      "startDate": "2018-02-20",
+      "endDate": "2018-06-27",
+      "description": "Book rental hours",
+      "descriptionType": "OPENING_DAY",
+      "openingDays": [{
+         "day": "MONDAY",
+         "open": true,
+         "allDay": true,
+         "openingHour": null
+      }, {
+         "day": "TUESDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "WEDNESDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "THURSDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "FRIDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "SATURDAY",
+         "open": true,
+         "allDay": true,
+         "openingHour": null
+      }, {
+         "day": "SUNDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "19:09:57.000Z",
+            "startTime": "09:09:57.000Z"
+         }]
+      }]
+   },
+   {
+      "startDate": "2018-03-01",
+      "endDate": "2018-06-03",
+      "description": "Book rental hours",
+      "descriptionType": "EXCEPTION",
+      "openingDays": [{
+         "day": "MONDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "TUESDAY",
+         "open": true,
+         "allDay": false,
+         "openingHour": [{
+            "endTime": "11:54:56.000Z",
+            "startTime": "07:54:56.000Z"
+         }, {
+            "endTime": "14:32:53.000Z",
+            "startTime": "12:17:03.000Z"
+         }]
+      }, {
+         "day": "WEDNESDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "THURSDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "FRIDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }, {
+         "day": "SATURDAY",
+         "open": true,
+         "allDay": true,
+         "openingHour": null
+      }, {
+         "day": "SUNDAY",
+         "open": false,
+         "allDay": false,
+         "openingHour": null
+      }]
+   }
+]
