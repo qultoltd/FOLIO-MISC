@@ -1,0 +1,60 @@
+@startuml
+!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define primary_key(x) <b>x</b>
+!define unique(x) <color:green>x</color>
+!define not_null(x) <u>x</u>
+hide methods
+hide stereotypes
+
+Table(openings, "openings") {
+primary_key(id) UUID
+not_null(unique(servicePointId)) UUID
+not_null(unique(name)) STRING
+not_null(startDate) DATE
+not_null(endDate) DATE
+}
+
+Table(weekHours, "weekHours"){
+primary_key(id) UUID
+not_null(openingId) UUID FK
+not_null(day) ENUM
+startTime STRING
+endTime STRING
+not_null(allDay) BOOL
+not_null(isOpen) BOOL
+}
+
+Table(exceptions, "exceptions"){
+primary_key(id) UUID
+not_null(openingId) UUID FK
+not_null(day) ENUM
+startTime STRING
+endTime STRING
+not_null(allDay) BOOL
+not_null(isOpen) BOOL
+}
+
+Table(openingHours, "openingHours"){
+primary_key(id) UUID
+not_null(openingId) UUID FK
+not_null(startDate) TIMESTAMP
+not_null(endDate) TIMESTAMP
+not_null(allDay) BOOL
+not_null(isOpen) BOOL
+}
+
+Table(exceptionHours, "exceptionHours"){
+primary_key(id) UUID
+not_null(openingId) UUID FK
+not_null(startDate) TIMESTAMP
+not_null(endDate) TIMESTAMP
+not_null(allDay) BOOL
+not_null(isOpen) BOOL
+}
+
+
+openings "1" --> "0..N" weekHours : ""
+openings "1" --> "0..N" exceptions : ""
+openings "1" --> "0..N" openingHours : ""
+openings "1" --> "0..N" exceptionHours : ""
+@enduml
