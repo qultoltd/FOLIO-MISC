@@ -6,7 +6,7 @@
 hide methods
 hide stereotypes
 
-Table(openings, "openings") {
+Table(openings, "openings\n(contains the openings by servicepoints)") {
 primary_key(id) UUID
 not_null(unique(servicePointId)) UUID
 not_null(unique(name)) STRING
@@ -14,7 +14,7 @@ not_null(startDate) DATE
 not_null(endDate) DATE
 }
 
-Table(weekHours, "weekHours"){
+Table(regularHours, "regularHours\n(contains a normal period\n one week for every period)"){
 primary_key(id) UUID
 not_null(openingId) UUID FK
 not_null(day) ENUM
@@ -24,7 +24,7 @@ not_null(allDay) BOOL
 not_null(isOpen) BOOL
 }
 
-Table(exceptions, "exceptions"){
+Table(exceptions, "exceptions\n(contains an exceprional period\n one week for every period)"){
 primary_key(id) UUID
 not_null(openingId) UUID FK
 not_null(day) ENUM
@@ -34,7 +34,7 @@ not_null(allDay) BOOL
 not_null(isOpen) BOOL
 }
 
-Table(openingHours, "openingHours"){
+Table(actualOpeningHours, "actualOpeningHours\n(contains the opening periods for every day)"){
 primary_key(id) UUID
 not_null(openingId) UUID FK
 not_null(startDate) TIMESTAMP
@@ -43,7 +43,7 @@ not_null(allDay) BOOL
 not_null(isOpen) BOOL
 }
 
-Table(exceptionHours, "exceptionHours"){
+Table(exceptionalHours, "exceptionalHours\n(contains the exception periods for every day)"){
 primary_key(id) UUID
 not_null(openingId) UUID FK
 not_null(startDate) TIMESTAMP
@@ -52,9 +52,8 @@ not_null(allDay) BOOL
 not_null(isOpen) BOOL
 }
 
-
-openings "1" --> "0..N" weekHours : ""
+openings "1" --> "0..N" regularHours : ""
 openings "1" --> "0..N" exceptions : ""
-openings "1" --> "0..N" openingHours : ""
-openings "1" --> "0..N" exceptionHours : ""
+openings "1" --> "0..N" actualOpeningHours : ""
+openings "1" --> "0..N" exceptionalHours : ""
 @enduml
