@@ -1,0 +1,523 @@
+{
+	"variables": [],
+	"info": {
+		"name": "mod-calendar",
+		"_postman_id": "b8721e84-61df-d0e6-8a27-efb7afd89a49",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Calendar",
+			"description": "",
+			"item": [
+				{
+					"name": "Registrate modul",
+					"description": "",
+					"item": [
+						{
+							"name": "0) modules",
+							"request": {
+								"url": "http://localhost:9130/_/proxy/tenants/diku/modules",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"mod-calendar-1.0.0-SNAPSHOT\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "1) modulDescriptor",
+							"request": {
+								"url": "http://localhost:9130/_/proxy/modules",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"mod-calendar-1.0.1-SNAPSHOT\",\r\n  \"name\": \"Calendar module\",\r\n  \"provides\": [\r\n    {\r\n      \"id\": \"calendar\",\r\n      \"version\": \"1.0\",\r\n      \"handlers\": [\r\n        {\r\n          \"methods\": [\r\n            \"GET\"\r\n          ],\r\n          \"pathPattern\": \"/calendar/periods\",\r\n          \"permissionsRequired\": [\r\n            \"calendar.collection.get\"\r\n          ]\r\n        },\r\n        {\r\n          \"methods\": [\r\n            \"GET\",\r\n            \"POST\"\r\n          ],\r\n          \"pathPattern\": \"/calendar/periods/{servicePointId}/period\",\r\n          \"permissionsRequired\": [\r\n            \"calendar.collection.add\",\r\n            \"calendar.collection.get\"\r\n          ]\r\n        },\r\n        {\r\n          \"methods\": [\r\n            \"GET\",\r\n            \"DELETE\",\r\n            \"PUT\"\r\n          ],\r\n          \"pathPattern\": \"/calendar/periods/{servicePointId}/period/{periodId}\",\r\n          \"permissionsRequired\": [\r\n            \"calendar.collection.get\",\r\n            \"calendar.collection.update\",\r\n            \"calendar.collection.remove\"\r\n          ]\r\n        }\r\n      ]\r\n    },{\r\n      \"id\": \"_tenant\",\r\n      \"version\": \"1.0\",\r\n      \"interfaceType\": \"system\",\r\n      \"handlers\": [\r\n        {\r\n          \"methods\": [\r\n            \"POST\"\r\n          ],\r\n          \"pathPattern\": \"/_/tenant\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"permissionSets\": [\r\n    {\r\n      \"permissionName\": \"calendar.collection.get\",\r\n      \"displayName\": \"List calendar event descriptions\",\r\n      \"description\": \"\"\r\n    },\r\n    {\r\n      \"permissionName\": \"calendar.collection.add\",\r\n      \"displayName\": \"Add new calendar event description\",\r\n      \"description\": \"\"\r\n    },\r\n    {\r\n      \"permissionName\": \"calendar.collection.update\",\r\n      \"displayName\": \"Update existing calendar event description\",\r\n      \"description\": \"\"\r\n    },\r\n    {\r\n      \"permissionName\": \"calendar.collection.remove\",\r\n      \"displayName\": \"Remove calendar event description\",\r\n      \"description\": \"\"\r\n    },\r\n    {\r\n      \"permissionName\": \"calendar.collection.all\",\r\n      \"displayName\": \"Calendar permissions\",\r\n      \"description\": \"\",\r\n      \"subPermissions\": [\r\n        \"calendar.collection.get\",\r\n        \"calendar.collection.add\",\r\n        \"calendar.collection.update\",\r\n        \"calendar.collection.remove\"\r\n      ],\r\n      \"visible\": true\r\n    }\r\n  ],\r\n  \"launchDescriptor\": {\r\n    \"dockerImage\": \"mod-calendar:1.0.1-SNAPSHOT\",\r\n    \"dockerArgs\": {\r\n      \"HostConfig\": { \"PortBindings\": { \"8081/tcp\":  [{ \"HostPort\": \"%p\" }] } }\r\n    },\r\n    \"dockerPull\" : false\r\n  }\r\n}\r\n"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "2) discovery",
+							"request": {
+								"url": "{{url}}/_/discovery/modules",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \"srvcId\": \"mod-calendar-1.0.1-SNAPSHOT\",\n \"url\":\"http://{{localIpAddress}}:8081\",\n \"instId\":\"{{localIpAddress}}-8081\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "3) tenant",
+							"request": {
+								"url": "{{url}}/_/proxy/tenants/{{tenant}}/modules",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"mod-calendar-1.0.1-SNAPSHOT\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Delete module",
+					"description": "",
+					"item": [
+						{
+							"name": "1) tenant",
+							"request": {
+								"url": "{{url}}/_/proxy/tenants/{{tenant}}/modules/mod-calendar-1.0.1-SNAPSHOT",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"mod-calendar-1.0.0-SNAPSHOT.17\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "2) discovery",
+							"request": {
+								"url": "{{url}}/_/discovery/modules/mod-calendar-1.0.1-SNAPSHOT",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "3) modulDescriptor",
+							"request": {
+								"url": "{{url}}/_/proxy/modules/mod-calendar-1.0.1-SNAPSHOT",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Endpoints",
+					"description": "",
+					"item": [
+						{
+							"name": "FOLIO login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"postman.setEnvironmentVariable(\"token\", postman.getResponseHeader(\"x-okapi-token\"));"
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{url}}/authn/login",
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-okapi-tenant",
+										"value": "{{tenant}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"diku_admin\",\n  \"password\": \"admin\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "POST calendar",
+							"request": {
+								"url": "{{url}}/calendar/periods/1/period",
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-okapi-tenant",
+										"value": "{{tenant}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "x-okapi-token",
+										"value": "{{token}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\": \"fa9927e8-5f79-498e-94ea-8b5b474795c8\",\r\n\t\"servicePointId\": \"1\",\r\n\t\"name\": \"test2\",\r\n\t\"startDate\": \"2018-10-01\",\r\n\t\"endDate\": \"2018-11-30\",\r\n\t\"openingDays\": [{\r\n\t\t\"weekdays\": {\r\n\t\t\t\"day\": \"MONDAY\"\r\n\t\t},\r\n\t\t\"openingDay\": {\r\n\t\t\t\"openingHour\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"startTime\": \"10:00\",\r\n\t\t\t\t\t\"endTime\": \"12:00\"\r\n\t\t\t\t},{\r\n\t\t\t\t\t\"startTime\": \"14:00\",\r\n\t\t\t\t\t\"endTime\": \"17:00\"\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"allDay\": false,\r\n\t\t\t\"open\": true\r\n\t\t}\r\n\t}]\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "PUT calendar",
+							"request": {
+								"url": "{{url}}/calendar/periods/100/period/fa9927e8-5f79-498e-94ea-8b5b474795c8",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-okapi-tenant",
+										"value": "{{tenant}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "x-okapi-token",
+										"value": "{{token}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\": \"fa9927e8-5f79-498e-94ea-8b5b474795c8\",\r\n\t\"servicePointId\": \"1\",\r\n\t\"name\": \"test2\",\r\n\t\"startDate\": \"2018-10-01\",\r\n\t\"endDate\": \"2018-11-30\",\r\n\t\"openingDays\": [{\r\n\t\t\"weekdays\": {\r\n\t\t\t\"day\": \"MONDAY\"\r\n\t\t},\r\n\t\t\"openingDay\": {\r\n\t\t\t\"openingHour\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"startTime\": \"09:00\",\r\n\t\t\t\t\t\"endTime\": \"11:00\"\r\n\t\t\t\t},{\r\n\t\t\t\t\t\"startTime\": \"13:00\",\r\n\t\t\t\t\t\"endTime\": \"16:00\"\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"allDay\": false,\r\n\t\t\t\"open\": true\r\n\t\t}\r\n\t}]\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "POST calendar - EXCEPTIONAL",
+							"request": {
+								"url": "{{url}}/calendar/periods/1/period",
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-okapi-tenant",
+										"value": "{{tenant}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "x-okapi-token",
+										"value": "{{token}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\": \"da9927e8-5f79-498e-94ea-8b5b474795c8\",\r\n\t\"servicePointId\": \"1\",\r\n\t\"name\": \"test1\",\r\n\t\"startDate\": \"2019-08-01\",\r\n\t\"endDate\": \"2019-08-31\",\r\n\t\"openingDays\": [{\r\n\t\t\"openingDay\": {\r\n\t\t\t\"openingHour\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"startTime\": \"10:00\",\r\n\t\t\t\t\t\"endTime\": \"12:00\"\r\n\t\t\t\t},{\r\n\t\t\t\t\t\"startTime\": \"14:00\",\r\n\t\t\t\t\t\"endTime\": \"17:00\"\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"allDay\": false,\r\n\t\t\t\"open\": true\r\n\t\t}\r\n\t}]\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE calendar",
+							"request": {
+								"url": "{{url}}/calendar/periods/1/period/fa9927e8-5f79-498e-94ea-8b5b474795c8",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-okapi-tenant",
+										"value": "{{tenant}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "x-okapi-token",
+										"value": "{{token}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "GET calendar periods",
+							"request": {
+								"url": {
+									"raw": "{{url}}/calendar/periods?servicePointId=1&startDate=2018-06-01&endDate=2019-06-30&limit=10&offset=0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"calendar",
+										"periods"
+									],
+									"query": [
+										{
+											"key": "servicePointId",
+											"value": "1",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "startDate",
+											"value": "2018-06-01",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "endDate",
+											"value": "2019-06-30",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-okapi-tenant",
+										"value": "{{tenant}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "x-okapi-token",
+										"value": "{{token}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "GET calendar  By periodId",
+							"request": {
+								"url": {
+									"raw": "{{url}}/calendar/periods/1/period?withOpeningDays=true&showPast=true&exceptional=false",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"calendar",
+										"periods",
+										"1",
+										"period"
+									],
+									"query": [
+										{
+											"key": "withOpeningDays",
+											"value": "true",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "showPast",
+											"value": "true",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "exceptional",
+											"value": "false",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-okapi-tenant",
+										"value": "{{tenant}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "x-okapi-token",
+										"value": "{{token}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "GET calendar by openingId",
+							"request": {
+								"url": {
+									"raw": "{{url}}/calendar/periods/1/period/fa9927e8-5f79-498e-94ea-8b5b474795c8?withOpeningDays=true&showpast=true",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"calendar",
+										"periods",
+										"1",
+										"period",
+										"fa9927e8-5f79-498e-94ea-8b5b474795c8"
+									],
+									"query": [
+										{
+											"key": "withOpeningDays",
+											"value": "true",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "showpast",
+											"value": "true",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-okapi-tenant",
+										"value": "{{tenant}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "x-okapi-token",
+										"value": "{{token}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
