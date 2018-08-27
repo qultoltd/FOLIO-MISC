@@ -1,4 +1,10 @@
+###Vagrant
+* Érdemes a testing-backend vagrant boxot (https://app.vagrantup.com/folio/boxes/testing-backend) használni mivel 
+a böngésző catchel, és ha a teljes testinget használnánk, akkor catchelné a boxban lévő stripes-ot.
+
+
 ## Mindennapos Folio UI fejlesztés előtt:
+* ```vagrant up``` a megfelelő vagrant mappában
 * PowerShell cd a ui modulokat tartalmazó mappába 
 
      ```text
@@ -19,13 +25,15 @@
     lebuildeli a projektet (a mvn hez hasonlóan)
 *   Ez után a ```cd stripes-sample-platform ``` mappában ```stripes serve```
     * Ha Memory leak error van egy webpack buildnél akkor csak újra kell indítani
-    
- 
+   
+   
+###Fejlesztés végén pedig    
+* Ki kell lőni a stripesot
+* Majd a Vagrant-ot ```vagrant halt```     
       
-      
-      
-
-
+###Ha dropolni akarod az adatbázist
+* ```vagrant destroy``` - kitörli a teljes vagrant boxot db-stől...
+* majd ugyanitt ```vagrant up```
 
 
 # Folio alapok
