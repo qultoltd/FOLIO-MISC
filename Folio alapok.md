@@ -1,7 +1,7 @@
 ###Vagrant
+* Virtal Box telepítése, ha még nincs felrakva
 * Érdemes a testing-backend vagrant boxot (https://app.vagrantup.com/folio/boxes/testing-backend) használni mivel 
 a böngésző catchel, és ha a teljes testinget használnánk, akkor catchelné a boxban lévő stripes-ot.
-
 
 ## Mindennapos Folio UI fejlesztés előtt:
 * ```vagrant up``` a megfelelő vagrant mappában
